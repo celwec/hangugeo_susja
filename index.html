@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Korean Numbers Quiz</title>
+	<link rel="stylesheet" href="style.css">
+	<script src="script.js" defer></script>
+</head>
+<body>
+	<div id="options">
+		<div id="back">
+			<div id="middle">
+				<h1 class="hcenter">한국어 숫자 퀴즈</h1>
+			</div>
+		</div>
+		<div class="box" id="types_parent">
+			<h2>Number Type</h2>
+			<label for="radio_type_sino">
+				<input type="radio" name="types" id="radio_type_sino" value="sino" checked="checked">
+				<span>Sino Korean</span>
+			</label>
+			<label for="radio_type_native">
+				<input type="radio" name="types" id="radio_type_native" value="native">
+				<span>Native Korean</span>
+			</label>
+		</div>
+		<div class="box">
+			<h2>Range</h2>
+			<label for="ones">
+				<input type="radio" name="ranges" id="ones" checked="checked">
+				<span>0-9</span>
+			</label>
+			<label for="tens">
+				<input type="radio" name="ranges" id="tens">
+				<span>10-99</span>
+			</label>
+			<label for="hundreds">
+				<input type="radio" name="ranges" id="hundreds">
+				<span>100-999</span>
+			</label>
+			<label for="thousands">
+				<input type="radio" name="ranges" id="thousands">
+				<span>1000-9999</span>
+			</label>
+			<label for="all">
+				<input type="radio" name="ranges" id="all">
+				<span>All</span>
+			</label>
+		</div>
+		<div class="box">
+			<h2>Direction</h2>
+			<label for="ktd">
+				<input type="radio" name="dir" id="ktd" checked="checked">
+				<span>Korean to Decimal</span>
+			</label>
+			<label for="dtk">
+				<input type="radio" name="dir" id="dtk">
+				<span>Decimal to Korean</span>
+			</label>
+		</div>
+		<div class="box">
+			<h2>Questions</h2>
+			<input type="text" name="questions" id="num_questions" value="10">
+		</div>
+		<div class="btn-wrapper">
+			<button id="cheatsheet_btn">Cheatsheet</button>
+			<button id="start_btn">Start Quiz!</button>
+		</div>
+	</div>
+	<div id="cards" class="hidden">
+		<div id="back">
+			<div id="middle">
+				<h1 class="hcenter">한국어 숫자 퀴즈</h1>
+			</div>
+		</div>
+		<div class="box">
+			<div id="question_card"></div>
+		</div>
+		<div id="answer_area">
+			<input type="text" name="answer_field" id="answer_field">
+			<button id="answer_btn">Answer</button>
+		</div>
+	</div>
+	<div id="results" class="hidden">
+		<div id="back">
+			<div id="middle">
+				<h1 class="hcenter">한국어 숫자 퀴즈</h1>
+			</div>
+		</div>
+		<div class="box">
+			<h2>Results</h2>
+			<div class="grid">
+				<div>Questions</div><div id="results_amount"></div>
+				<div>Correct</div><div id="results_correct"></div>
+				<div>Incorrect</div><div id="results_wrong"></div>
+				<div>Percent</div><div id="results_percent"></div>
+			</div>
+		</div>
+		<div class="btn-wrapper">
+			<button id="return_btn">Return to Menu</button>
+		</div>
+	</div>
+	<div id="cheatsheet" class="hidden">
+		<div id="back">
+			<div id="middle">
+				<h1 class="hcenter">한국어 숫자 퀴즈</h1>
+			</div>
+		</div>
+		<div class="box">
+			<h2>Sino Korean numbers</h2>
+			<div class="number_grid">
+				<div>0</div><div>영</div>
+				<div>1</div><div>일</div>
+				<div>2</div><div>이</div>
+				<div>3</div><div>삼</div>
+				<div>4</div><div>사</div>
+				<div>5</div><div>오</div>
+				<div>6</div><div>육</div>
+				<div>7</div><div>칠</div>
+				<div>8</div><div>팔</div>
+				<div>9</div><div>구</div>
+				<div>10</div><div>십</div>
+				<div>100</div><div>백</div>
+				<div>1,000</div><div>천</div>
+				<div>10,000</div><div>만</div>
+				<div>100,000</div><div>십만</div>
+				<div>1,000,000</div><div>백만</div>
+				<div>10,000,000</div><div>천만</div>
+				<div>100,000,000</div><div>억</div>
+			</div>
+		</div>
+		<div class="box">
+			<h2>Native Korean numbers</h2>
+			<div class="number_grid">
+				<div>1</div><div>하나</div>
+				<div>2</div><div>둘</div>
+				<div>3</div><div>셋</div>
+				<div>4</div><div>넷</div>
+				<div>5</div><div>다섯</div>
+				<div>6</div><div>여섯</div>
+				<div>7</div><div>일곱</div>
+				<div>8</div><div>여덟</div>
+				<div>9</div><div>아홉</div>
+				<div>10</div><div>열</div>
+				<div>20</div><div>스물</div>
+				<div>30</div><div>서른</div>
+				<div>40</div><div>마흔</div>
+				<div>50</div><div>쉰</div>
+				<div>60</div><div>예순</div>
+				<div>70</div><div>일흔</div>
+				<div>80</div><div>여든</div>
+				<div>90</div><div>아흔</div>
+			</div>
+		</div>
+		<div class="btn_wrapper">
+			<button id="return2_btn">Return to Menu</button>
+		</div>
+	</div>
+</body>
+</html>
