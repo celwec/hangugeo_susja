@@ -110,7 +110,7 @@ label > input[type="radio"]:hover + * {
 }
 
 label > input[type="radio"]:checked + *::before {
-	background: radial-gradient(#002f6c 0%, #002f6c 40%, transparent 50%, transparent);
+	background: radial-gradient(#002f6c 0%, #002f6c 50%, transparent 50%, transparent);
 	border-color: #c8102e;
 }
 
